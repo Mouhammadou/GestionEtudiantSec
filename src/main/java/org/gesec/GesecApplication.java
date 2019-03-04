@@ -17,7 +17,7 @@ public class GesecApplication {
 	public static void main(String[] args) throws ParseException {
 
 		ApplicationContext ctx =  SpringApplication.run(GesecApplication.class, args);
-		EtudiantRepository etudiantRepository = ctx.getBean(EtudiantRepository.class);
+		/*EtudiantRepository etudiantRepository = ctx.getBean(EtudiantRepository.class);
 		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 		etudiantRepository.save(new Etudiant("BA", "Doudou", df.parse("1996-01-01")));
 		etudiantRepository.save(new Etudiant("NDOYE", "Arame", df.parse("1995-12-14")));
@@ -25,7 +25,7 @@ public class GesecApplication {
 
 		List<Etudiant> etds = etudiantRepository.findAll();
 
-		etds.forEach(etudiant -> System.out.println(etudiant.getNom()));
+		etds.forEach(etudiant -> System.out.println(etudiant.getNom()));*/
 	}
 
 }
