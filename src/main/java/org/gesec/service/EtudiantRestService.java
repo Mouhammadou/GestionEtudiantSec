@@ -31,16 +31,8 @@ public class EtudiantRestService {
     private EtudiantRepository etudiantRepository;
 
     @Secured(value = {"ROLE_ADMIN","ROLE_SCOLARITE"})
-    @RequestMapping(value = "/etudiants", method = RequestMethod.POST)
-    public Object saveEtudiant(@RequestBody @Valid Etudiant etudiant, BindingResult bindingResult){
-        if (bindingResult.hasErrors()){
-            Map<String, Object> errors = new HashMap<>();
-            errors.put("errors", true);
-            for (FieldError fe :  bindingResult.getFieldErrors()){
-                errors.put(fe.getField(), fe.getDefaultMessage());
-            }
-            return errors;
-        }
+    @RequestMapping(value = "/addEtudiant", method = RequestMethod.POST)
+    public Object saveEtudiant(@RequestBody Etudiant etudiant){
         return etudiantRepository.save(etudiant);
     }
 
