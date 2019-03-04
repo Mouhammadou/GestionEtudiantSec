@@ -47,6 +47,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .permitAll()
                 .defaultSuccessUrl("/index.html")
                             .and()
-                .exceptionHandling().accessDeniedPage("/403.html");
+                .exceptionHandling().accessDeniedPage("/403.html")
+                            .and()
+                .logout()
+                    .invalidateHttpSession(true)
+                    .logoutUrl("login?logout")
+                    .permitAll();
     }
 }

@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/myStyle.css">
 </head>
-<body ng-app="myApp" ng-controller="InscriptionController">
+<body>
 
     <div class="col-md-6 spacer">
         <div class="panel-info">
@@ -17,25 +17,22 @@
             <form>
                 <div class="form-group">
                     <label class="control-label">Nom</label>
-                    <input class="form-control" type="text" ng-model="etudiant.nom">
+                    <input class="form-control" type="text">
                     <span class="error"></span>
                 </div>
                 <div class="form-group">
                     <label class="control-label">Prenom</label>
-                    <input class="form-control" type="text" ng-model="etudiant.prenom">
+                    <input class="form-control" type="text">
                     <span class="error"></span>
                 </div>
                 <div class="form-group">
                     <label class="control-label">Date de naissance</label>
-                    <input class="form-control" type="date" ng-model="etudiant.dateNaissance">
+                    <input class="form-control" type="date">
                     <span class="error"></span>
                 </div>
-                <div class="btn btn-primary" ng-click="saveEtudiant()">Enregistrer</div>
+                <div class="btn btn-primary">Enregistrer</div>
             </form>
         </div>
     </div>
-
-    <script type="text/javascript" src="js/angular.min.js"></script>
-    <script type="text/javascript" src="js/myApp.js"></script>
 </body>
 </html>
