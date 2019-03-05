@@ -29,9 +29,9 @@ public class EtudiantController {
         return "redirect:/findStudents";
     }
 
-    @RequestMapping(value = "studentForm")
-    public String StudentPageForm(){
-        return "studentForm";
+    @RequestMapping(value = "/studentForm")
+    public String StudentPageForm(@ModelAttribute Etudiant etudiant){
+        return "students/studentForm";
     }
 
     @RequestMapping(value = "deleteStudent/{id}")
@@ -42,7 +42,7 @@ public class EtudiantController {
 
     @RequestMapping(value = "etudiants/edit/{id}", method = RequestMethod.GET)
     public String edit(@PathVariable Long id, Model model) {
-        return "etudiantForm";
+        return "students/studentForm";
     }
 
     @Secured(value = {"ROLE_ADMIN","ROLE_SCOLARITE","ROLE_PROF"})
