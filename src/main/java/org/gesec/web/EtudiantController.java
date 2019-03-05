@@ -26,23 +26,22 @@ public class EtudiantController {
     @RequestMapping(value = "/addEtudiant", method = RequestMethod.POST)
     public String saveEtudiant(Etudiant etudiant){
         etudiantRepository.save(etudiant);
-        return "students/listStudents";
+        return "redirect:/findStudents";
     }
 
-    @RequestMapping(value = "addStudentPage")
-    public String addStudentPage(){
-        return "students/addStudent";
+    @RequestMapping(value = "studentForm")
+    public String StudentPageForm(){
+        return "studentForm";
     }
 
     @RequestMapping(value = "deleteStudent/{id}")
     public String deleteStudent(@PathVariable Long id){
         etudiantRepository.deleteById(id);
-        return "students/listStudents";
+        return "redirect:/findStudents";
     }
 
     @RequestMapping(value = "etudiants/edit/{id}", method = RequestMethod.GET)
     public String edit(@PathVariable Long id, Model model) {
-        model.addAttribute("etudiant", etudiantRepository.findById(id));
         return "etudiantForm";
     }
 
