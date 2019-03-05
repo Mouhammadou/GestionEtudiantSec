@@ -1,4 +1,4 @@
-package org.gesec.service;
+package org.gesec.web;
 
 import org.gesec.dao.RoleRepository;
 import org.gesec.dao.UserRepository;
@@ -6,15 +6,14 @@ import org.gesec.entities.Role;
 import org.gesec.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
-@RestController
+@Controller
 @Secured(value = "ROLE_ADMIN")
-public class UserRestService {
+public class UserController {
 
     @Autowired
     private UserRepository userRepository;

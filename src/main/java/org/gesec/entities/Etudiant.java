@@ -1,5 +1,7 @@
 package org.gesec.entities;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,6 +25,8 @@ public class Etudiant implements Serializable {
     @NotNull
     @Size(min = 3,max = 15)
     private String prenom;
+
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date dateNaissance;
 
     public Etudiant() {
