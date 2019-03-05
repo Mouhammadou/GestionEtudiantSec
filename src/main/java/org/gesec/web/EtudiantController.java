@@ -30,7 +30,7 @@ public class EtudiantController {
     }
 
     @RequestMapping(value = "/studentForm")
-    public String StudentPageForm(@ModelAttribute Etudiant etudiant){
+    public String StudentPageForm(){
         return "students/studentForm";
     }
 
@@ -42,7 +42,12 @@ public class EtudiantController {
 
     @RequestMapping(value = "etudiants/edit/{id}", method = RequestMethod.GET)
     public String edit(@PathVariable Long id, Model model) {
-        return "students/studentForm";
+        model.addAttribute("eM", etudiantRepository.findById(id));
+        return "students/modifStudent";
+    }
+
+    public String editStudent(){
+        return null;
     }
 
     @Secured(value = {"ROLE_ADMIN","ROLE_SCOLARITE","ROLE_PROF"})
